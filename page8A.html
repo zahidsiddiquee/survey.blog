@@ -5,49 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Response A</title>
 
-<style>
-body {
-  background: #ffffff;
-  margin: 0;
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  text-align: center;
-}
 
-.card {
-  max-width: 360px;
-  margin: auto;
-  background: #fff;
-  border-radius: 14px;
-  padding: 22px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-}
-
-h2 {
-  font-size: 22px;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-p {
-  font-size: 16px;
-  color: #555;
-  line-height: 1.55;
-}
-
-button {
-  width: 90%;
-  margin-top: 18px;
-  padding: 12px;
-  border: none;
-  border-radius: 10px;
-  background: #ff4f7a;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-}
-</style>
 </head>
 
 <body>
@@ -55,14 +13,28 @@ button {
 <div class="card">
   <h2>😊 Thank you</h2>
 
-  <p>Haha… coding all these pages made me tired 😅</p>
+  <p>
+    coding all these pages made me tired 😅  
+    but honestly… your response made me smile.  
+    I really appreciate what you said, and we will talk about everything — time is completely your. 💛  
+    I don’t know whether you liked all this or not… as you know, how would I know what girls like 😅  
+   come back WhatsApp.
+  </p>
 
-  <p>But honestly… your response made me smile.</p>
+  <textarea id="msg" placeholder="Write anything you want..."></textarea>
 
-  <p>I really appreciate what you said, and we will talk about everything — your time is completely yours. 💛</p>
-
-  <button onclick="window.close()">Finish</button>
+  <button onclick="sendToWhatsApp()">Send</button>
 </div>
+
+<script>
+function sendToWhatsApp() {
+    let message = document.getElementById("msg").value;
+    let phone = "9230054719402"; // <-- PUT YOUR WHATSAPP NUMBER HERE (without +)
+    let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank");
+}
+</script>
 
 </body>
 </html>
