@@ -1,0 +1,174 @@
+/* Soft Romantic Login Page */
+
+body.login-body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffdbe7, #ff9ebd);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card Container */
+.login-container {
+    background: #ffffffcc;
+    backdrop-filter: blur(8px);
+    padding: 35px 28px;
+    border-radius: 22px;
+    width: 90%;
+    max-width: 360px;
+    box-shadow: 0 8px 20px rgba(255, 0, 85, 0.25);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Heading */
+.login-title {
+    margin: 0;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ff5c8a;
+}
+
+.login-subtitle {
+    text-align: center;
+    margin: 5px 0 22px;
+    font-size: 14px;
+    color: #6b6b6b;
+}
+
+/* Form Inputs */
+.login-form label {
+    font-size: 14px;
+    color: #444;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #ffb3c9;
+    margin-bottom: 18px;
+    outline: none;
+    font-size: 14px;
+    background: #fff;
+    transition: 0.3s ease;
+}
+
+.login-form input:focus {
+    border-color: #ff5c8a;
+    box-shadow: 0 0 8px rgba(255, 93, 143, 0.4);
+}
+
+/* Button */
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #ff5c8a, #ff89ab);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 0, 85, 0.3);
+}
+
+.login-btn:hover {
+    transform: translateY(-3px);
+}
+
+/* Error Message */
+.error-msg {
+    color: red;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: 600;
+    display: none;
+}
+
+/* Simple fade animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ////////////////////////// */
+
+/* WELCOME PAGE */
+
+body.welcome-body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffdbe7, #ff9ebd);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-container {
+    background: #ffffffcc;
+    backdrop-filter: blur(8px);
+    text-align: center;
+    width: 90%;
+    max-width: 360px;
+    padding: 40px 25px;
+    border-radius: 22px;
+    box-shadow: 0 8px 20px rgba(255, 0, 85, 0.25);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.welcome-title {
+    font-size: 30px;
+    margin: 0;
+    font-weight: 700;
+    color: #ff5c8a;
+}
+
+.welcome-text {
+    font-size: 15px;
+    margin: 15px 0 30px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.welcome-btn {
+    background: linear-gradient(135deg, #ff5c8a, #ff89ab);
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 0, 85, 0.3);
+    transition: 0.25s ease;
+}
+
+.welcome-btn:hover {
+    transform: translateY(-3px);
+}
+/* PAGE 5  */
+
+.opt.selected {
+    background: #4299e1 !important;
+    color: white !important;
+}
+button[type="submit"] {
+    opacity: 0.5;
+    pointer-events: none;
+}
+button[type="submit"]:not([disabled]) {
+    opacity: 1;
+    pointer-events: auto;
+}

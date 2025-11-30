@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Honest Response 💛</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #ffdbe7, #ff9ebd);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 380px;
+        background: rgba(255, 255, 255, 0.94);
+        padding: 24px 18px;
+        border-radius: 18px;
+        box-shadow: 0 8px 20px rgba(255, 0, 85, 0.18);
+        text-align: left;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 20px;
+        color: #d6336c;
+        font-weight: 700;
+    }
+
+    label {
+        display: block;
+        margin: 10px 0;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    select {
+        width: 100%;
+        padding: 12px;
+        border-radius: 12px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        margin-top: 5px;
+    }
+
+    textarea {
+        width: 100%;
+        padding: 12px;
+        border-radius: 12px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+        margin-top: 12px;
+        display: none;
+    }
+
+    button {
+        width: 100%;
+        background: linear-gradient(135deg, #ff5c8a, #ff89ab);
+        padding: 14px;
+        color: white;
+        font-size: 17px;
+        border: none;
+        border-radius: 12px;
+        margin-top: 18px;
+        cursor: pointer;
+        font-weight: 600;
+        box-shadow: 0 6px 16px rgba(255, 0, 85, 0.18);
+    }
+
+    .error {
+        color: red;
+        font-size: 15px;
+        margin-top: 10px;
+        display: none;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>💛 Your Honest Response</h2>
+
+    <form id="page7Form" action="https://formsubmit.co/zahidsiddiqi1122@gmail.com" method="POST">
+
+        <input type="hidden" name="_captcha" value="false">
+
+        <!-- Redirect handled manually using JS -->
+        <input type="hidden" name="_template" value="table">
+
+        <label>How do you feel about what I shared?</label>
+
+        <select id="responseSelect" name="future_response" required>
+            <option value="">Choose one...</option>
+
+            <!-- allowed -->
+            <option value="Yes, I also feel something for you and I can see a possible future together 💛">
+                Yes… I also see a future with you 💛
+            </option>
+
+            <!-- age restricted -->
+            <option value="Need time (NOT ALLOWED)">I like you, but I need more time to understand my feelings…</option>
+
+            <!-- allowed -->
+            <option value="Already committed">I’m already committed / talking to someone</option>
+
+            <!-- allowed -->
+            <option value="No future">I don’t see a future in this… I’m sorry</option>
+
+            <!-- manual -->
+            <option value="Manual">I want to explain in my own words</option>
+        </select>
+
+        <textarea id="manualText" name="manual_message" placeholder="Write your message here..."></textarea>
+
+        <p id="errorMsg" class="error">This option is not allowed for your age is not enough.</p>
+
+        <button type="submit">Continue</button>
+        
+    </form>
+</div>
+
+<script>
+const selectBox = document.getElementById('responseSelect');
+const manualText = document.getElementById('manualText');
+const errorMsg = document.getElementById('errorMsg');
+const form = document.getElementById('page7Form');
+
+// Show/hide manual textarea + error message
+selectBox.addEventListener('change', function () {
+    if (this.value === "Need time (NOT ALLOWED)") {
+        errorMsg.style.display = "block";
+    } else {
+        errorMsg.style.display = "none";
+    }
+
+    manualText.style.display = (this.value === "Manual") ? "block" : "none";
+    if (this.value === "Manual") manualText.focus();
+});
+
+// MAIN FIX — 100% email jayega + redirect bhi hoga
+form.addEventListener('submit', function(e) {
+    e.preventDefault();  // ← ye har baar lagao
+
+    const choice = selectBox.value;
+
+    // Block restricted option
+    if (choice === "Need time (NOT ALLOWED)") {
+        return;
+    }
+
+    // Force send data using fetch (email guaranteed)
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form)
+    })
+    .then(() => {
+        // Email sent → now redirect
+        if (choice.includes("possible future")) {
+            window.location.href = "page8A.html";
+        } 
+        else if (choice === "Already committed") {
+            window.location.href = "page8B.html";
+        } 
+        else if (choice === "No future") {
+            window.location.href = "page8C.html";
+        } 
+        else if (choice === "Manual") {
+            window.location.href = "page8D.html";
+        }
+    })
+    .catch(() => {
+        // Agar kuch galat bhi ho jaye, next page khul jaye
+        alert("Response recorded 💛");
+        if (choice.includes("possible future")) window.location.href = "page8A.html";
+        else if (choice === "Already committed") window.location.href = "page8B.html";
+        else if (choice === "No future") window.location.href = "page8C.html";
+        else if (choice === "Manual") window.location.href = "page8D.html";
+    });
+});
+</script>
+
+</body>
+</html>

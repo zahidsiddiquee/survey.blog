@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure Entry</title>
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #ffdbe7, #ff9ebd);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        background-color: #ffffffcc;
+        padding: 25px 20px;
+        border-radius: 18px;
+        width: 90%;
+        max-width: 380px;
+        text-align: center;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 8px 20px rgba(255, 0, 85, 0.25);
+    }
+
+    h2 {
+        font-size: 28px;
+        margin-bottom: 5px;
+        color: #ff5c8a;
+        font-weight: 700;
+    }
+
+    p {
+        font-size: 15px;
+        color: #444;
+    }
+
+    input {
+        width: 100%;
+        padding: 14px;
+        margin: 12px 0;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        background: #fff;
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+        background: linear-gradient(135deg, #ff5c8a, #ff89ab);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 10px;
+        box-shadow: 0px 6px 15px rgba(255, 0, 85, 0.25);
+        transition: 0.25s ease;
+    }
+
+    button:hover {
+        transform: translateY(-3px);
+    }
+
+    .error {
+        color: #d60000;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Welcome </h2>
+    <p>Please verify your identity</p>
+
+    <input type="text" id="name" placeholder="Enter your name">
+    <input type="password" id="password" placeholder="Enter password">
+
+    <button onclick="login()">Proceed</button>
+
+    <p id="error" class="error"></p>
+</div>
+
+<script>
+function login() {
+    const allowedName = "Muafia Saleem";  
+    const allowedPass = "lifetime";       
+
+    const name = document.getElementById("name").value.trim();
+    const pass = document.getElementById("password").value.trim();
+    const error = document.getElementById("error");
+
+    if (name.toLowerCase() !== allowedName.toLowerCase()) {
+        error.textContent = "Access Denied 😎";
+        return;
+    }
+
+    if (pass !== allowedPass) {
+        error.textContent = "Access Denied 😎";
+        return;
+    }
+
+    // Redirect to Page 2
+    window.location.href = "page2.html";
+}
+</script>
+
+</body>
+</html>

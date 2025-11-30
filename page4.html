@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mood Check</title>
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #ffdbe7, #ff9ebd);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        background: #ffffffdd;
+        width: 90%;
+        max-width: 380px;
+        padding: 25px 20px;
+        border-radius: 18px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 6px 18px rgba(255, 0, 85, 0.25);
+        text-align: center;
+    }
+
+    h2 {
+        margin: 0;
+        color: #ff5c8a;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .mood-option {
+        margin: 10px 0;
+        padding: 12px;
+        background: #ffffff;
+        border-radius: 12px;
+        border: 1px solid #ddd;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .mood-option.selected {
+        border: 2px solid #ff5c8a;
+        background: #ffe4ef;
+    }
+
+    #warning {
+        color: #d60000;
+        margin-top: 12px;
+        font-size: 15px;
+        display: none;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 15px;
+        padding: 14px;
+        background: linear-gradient(135deg, #ff5c8a, #ff89ab);
+        border: none;
+        border-radius: 12px;
+        color: white;
+        font-size: 17px;
+        font-weight: 600;
+        box-shadow: 0px 4px 12px rgba(255, 0, 85, 0.3);
+        cursor: pointer;
+        opacity: 0.5;
+    }
+
+    button.enabled {
+        opacity: 1;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>How are you feeling today?</h2>
+
+    <div class="mood-option" onclick="selectMood(this, 'fresh')">😊 Fresh</div>
+    <div class="mood-option" onclick="selectMood(this, 'happy')">😄 Happy</div>
+    <div class="mood-option" onclick="selectMood(this, 'sad')">😐 Sad</div>
+    <div class="mood-option" onclick="selectMood(this, 'anxious')">😰 Anxious</div>
+
+    <p id="warning">Please fresh your mood first 💛 Take a deep breath</p>
+
+    <button id="nextBtn" disabled onclick="goNext()">Next</button>
+</div>
+
+<script>
+let selectedMood = "";
+
+function selectMood(element, mood) {
+    selectedMood = mood;
+
+    document.querySelectorAll('.mood-option')
+        .forEach(opt => opt.classList.remove('selected'));
+    
+    element.classList.add('selected');
+
+    const nextBtn = document.getElementById("nextBtn");
+    const warning = document.getElementById("warning");
+
+    if (mood === "fresh" || mood === "happy") {
+        nextBtn.disabled = false;
+        nextBtn.classList.add("enabled");
+        warning.style.display = "none";
+    } else {
+        nextBtn.disabled = true;
+        nextBtn.classList.remove("enabled");
+        warning.style.display = "block";
+    }
+}
+
+function goNext() {
+    window.location.href = "page5.html";
+}
+</script>
+
+</body>
+</html>

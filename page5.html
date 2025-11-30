@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Zahid</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffdbe7, #ff9ebd);
+      min-height: 100vh;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2c3e50;
+    }
+
+    .container {
+      background: #ffffffdd;
+      width: 90%;
+      max-width: 420px;
+      border-radius: 20px;
+      padding: 28px 22px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 6px 18px rgba(255, 0, 85, 0.25);
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 22px;
+      color: #ff5c8a;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .section {
+      text-align: left;
+      margin-bottom: 25px;
+    }
+
+    .section p {
+      margin: 0 0 12px 0;
+      font-weight: 600;
+      color: #444;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0;
+      font-size: 15px;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 10px;
+      transform: scale(1.2);
+      accent-color: #ff5c8a;
+    }
+
+    select, textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1.3px solid #e2e2e2;
+      border-radius: 12px;
+      margin-top: 10px;
+      font-family: inherit;
+      font-size: 15px;
+      background: white;
+    }
+
+    select:focus, textarea:focus {
+      outline: none;
+      border-color: #ff5c8a;
+      box-shadow: 0 0 8px rgba(255, 92, 138, 0.2);
+    }
+
+    textarea { resize: vertical; }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+      display: none;
+      text-align: center;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 20px;
+      background: linear-gradient(135deg, #ff5c8a, #ff89ab);
+      border: none;
+      border-radius: 12px;
+      color: white;
+      font-size: 17px;
+      font-weight: 600;
+      cursor: pointer;
+      opacity: 0.5;
+      pointer-events: none;
+      transition: 0.3s;
+      box-shadow: 0 4px 12px rgba(255, 0, 85, 0.3);
+    }
+
+    button.enabled {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>A Few Light & Sincere Questions 😊</h2>
+
+    <form id="questionsForm" 
+          action="https://formsubmit.co/zahidsiddiqi1122@gmail.com" 
+          method="POST">
+
+      <input type="hidden" name="traits[]" value="None selected (error)">
+      <input type="hidden" name="_next" value="page6.html">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New Answers from Muafia 💛">
+
+      <!-- TRAITS (NEW: 2 Neutral/Negative options added) -->
+      <div class="section">
+        <p>What do you think about Zahid as a friend? <small>(select as many as you like)</small></p>
+
+        <label><input type="checkbox" name="traits[]" value="Always respects boundaries"> Always respects boundaries</label>
+        <label><input type="checkbox" name="traits[]" value="Helps without expecting anything in return"> Helps without expecting anything in return</label>
+        <label><input type="checkbox" name="traits[]" value="Gives sincere advice"> Gives sincere advice</label>
+        <label><input type="checkbox" name="traits[]" value="Tries to make you smile when sad"> Tries to make you smile when you’re sad</label>
+        <label><input type="checkbox" name="traits[]" value="Makes honest prayers for you"> Makes honest prayers for you</label>
+        <label><input type="checkbox" name="traits[]" value="Tries his best to be a good person"> Tries his best to be a good person</label>
+        <label><input type="checkbox" name="traits[]" value="Patient and understanding"> Patient and understanding</label>
+
+        <!-- NEW 2 lines (Neutral + Negative) -->
+        <label><input type="checkbox" name="traits[]" value="Sometimes overthinks little things"> Sometimes overthinks little things</label>
+        <label><input type="checkbox" name="traits[]" value="Sometimes too emotional or sensitive"> Sometimes too emotional or sensitive</label>
+      </div>
+
+      <!-- 4 DROPDOWN QUESTIONS (added positive + negative options) -->
+      <div class="section">
+        <p>1. If we ever have a small disagreement, what usually happens?</p>
+        <select name="q1" required>
+          <option value="" disabled selected>Select an answer...</option>
+          <option value="Mostly I accept 😊">Mostly I accept 😊</option>
+          <option value="Zahid accepts">Zahid accepts</option>
+          <option value="We both say sorry">We both say sorry</option>
+
+          <!-- NEW Neutral/Negative -->
+          <option value="It gets awkward for a while">It gets awkward for a while</option>
+          <option value="We stop talking for some time">We stop talking for some time</option>
+
+          <option value="We don’t take it to heart">We don’t take it to heart</option>
+        </select>
+      </div>
+
+      <div class="section">
+        <p>2. Do you believe Zahid is serious about this friendship?</p>
+        <select name="q2" required>
+          <option value="" disabled selected>Select an answer...</option>
+          <option value="Yes">Yes</option>
+          <option value="Of course">Of course</option>
+          <option value="100%">100%</option>
+          <option value="He truly values it">He truly values it</option>
+
+          <!-- NEW Neutral/Negative -->
+          <option value="I’m not fully sure yet">I’m not fully sure yet</option>
+          <option value="Sometimes I doubt it">Sometimes I doubt it</option>
+        </select>
+      </div>
+
+      <div class="section">
+        <p>3. If Zahid ever makes tea or a simple meal for you one day?</p>
+        <select name="q3" required>
+          <option value="" disabled selected>Select an answer...</option>
+          <option value="Thank you, I will taste it">Thank you, I will taste it</option>
+          <option value="I will happily accept">I will happily accept</option>
+          <option value="I will try a little 😄">I will try a little 😄</option>
+          <option value="Better not, I want to stay alive 😂">Better not, I want to stay alive 😂</option>
+
+          <!-- Neutral/Negative -->
+          <option value="Maybe… depends on my mood">Maybe… depends on my mood</option>
+          <option value="I might say no politely">I might say no politely</option>
+        </select>
+      </div>
+
+      <div class="section">
+        <p>4. One thing you respect most about Zahid?</p>
+        <select name="q4" required>
+          <option value="" disabled selected>Select an answer...</option>
+          <option value="His honesty and good character">His honesty and good character</option>
+          <option value="His efforts">His efforts</option>
+          <option value="How he never crosses limits">How he never crosses limits</option>
+          <option value="His patience and faith">His patience and faith</option>
+
+          <!-- NEW Neutral/Negative -->
+          <option value="Nothing special comes to mind">Nothing special comes to mind</option>
+          <option value="Still trying to understand him">Still trying to understand him</option>
+        </select>
+      </div>
+
+      <div class="section">
+        <p>If there is anything you would like to say from your heart… (optional)</p>
+        <textarea name="message" rows="4" placeholder="Write here..."></textarea>
+      </div>
+
+      <p class="error" id="error">Please select at least one trait and answer all questions 💛</p>
+
+      <button type="submit" id="submitBtn">Submit & Continue →</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('questionsForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const error = document.getElementById('error');
+
+    function checkForm() {
+      const traitsChecked = document.querySelectorAll('input[name="traits[]"]:checked').length > 0;
+      const allSelectsFilled = Array.from(document.querySelectorAll('select[required]'))
+        .every(select => select.value !== "");
+
+      if (traitsChecked && allSelectsFilled) {
+        submitBtn.classList.add('enabled');
+        error.style.display = 'none';
+      } else {
+        submitBtn.classList.remove('enabled');
+        error.style.display = 'block';
+      }
+    }
+
+    form.addEventListener('change', checkForm);
+    form.addEventListener('input', checkForm);
+    checkForm();
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      submitBtn.textContent = "Sending your answers... ❤";
+      submitBtn.disabled = true;
+
+      fetch(form.action, { method: 'POST', body: new FormData(form) })
+      .then(() => window.location.href = "page6.html")
+      .catch(() => window.location.href = "page6.html");
+    });
+  </script>
+
+</body>
+</html>
